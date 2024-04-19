@@ -26,7 +26,7 @@ messages = [
     {"role": "model", "parts": {"text": "Olive."}},
 ]
 
-# Preload chat history to Gemini model's response.
+# Preload chat history into the chat session.
 for message in messages:
     chat.history.append(
         Content(
@@ -35,7 +35,7 @@ for message in messages:
         )
     )
 
-# Send the chat history and the last message response.
+# Send the chat history and the following prompt.
 prompt = "Olive who?"
 chat_response = get_chat_response(chat, prompt)
 
